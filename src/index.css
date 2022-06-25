@@ -5,9 +5,131 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: rgb(246, 246, 246);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Top Navbar */
+
+nav {
+  padding: 15px 36px;
+  display: flex;
+  align-items: center;
+}
+
+nav > h1 {
+  font-size: 35px;
+  margin-right: auto;
+  text-align: center;
+}
+
+nav > a {
+  margin: 5px 15px;
+}
+
+nav > button {
+  font-weight: bold;
+  margin: 5px 15px;
+  width: 150px;
+  height: 70px;
+  border-radius: 15px;
+}
+
+.navbar--dao{
+  background-image: linear-gradient(to right, rgb(223, 222, 157) , white);
+}
+
+.navbar--walletConnect{
+  background-image: linear-gradient(to right, lightblue , white);
+}
+
+.navbar--worldcoin{
+  background-image: linear-gradient(to right, rgb(187, 115, 235) , white);
+}
+
+nav > hr {
+  color: rgba(211, 211, 211, 0.998);
+}
+
+/* The header that talks about the community */
+
+.header{
+  margin: 0 auto;
+  padding: 100px;
+  text-align: center;
+}
+
+header > h1 {
+  font-size: 75px;
+}
+
+.header--filter{
+  display: flex;
+  width: 600px;
+  margin: auto;
+}
+
+header > div > button{
+  margin: 40px auto;
+  font-size: 20px;
+  border-radius: 9px;
+  padding: 10px;
+}
+
+/* the grid of daos roughly on the right side of the page */
+.container{
+  display: grid;
+  grid: 300px / auto auto auto;
+  margin: 0 auto;
+}
+
+.dao{
+  width: 350px;
+  height: 275px;
+  background-color: black;
+  border-radius: 9px;
+  margin: 15px 37px;
+}
+
+.dao--logos{
+  width: 350px;
+  height: 175px;
+  border-radius: 9px;
+}
+
+h3{
+  color: white;
+  margin-left: 19px;
+  margin-bottom: 1px;
+  text-align: left;
+}
+
+.dao--stats{
+  display: flex;
+  height: 50px;
+  width: 350px;
+  text-align: center;
+  margin-left: 15px;
+}
+
+.dao--rating{
+  color: white;
+  margin: 4px;
+}
+
+.dao--reviews{
+  color: white;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+
+.dao--badge{
+  color: white;
+  border-radius: 4px;
+  margin-top: 5px;
 }
