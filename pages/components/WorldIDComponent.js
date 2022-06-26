@@ -2,7 +2,7 @@ import React from "react";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 import { defaultAbiCoder as abi } from "@ethersproject/abi";
 import { keccak256 } from "@ethersproject/solidity";
-import worldID from "@worldcoin/id";
+// import worldID from "@worldcoin/id";
 
 export const provider = new WalletConnectProvider({
   rpc: {
@@ -29,32 +29,32 @@ const CONTRACT_ABI = [
   "function claim (address receiver, uint256 root, uint256 nullifierHash, uint256[8] calldata proof)",
 ];
 
-export const WorldIDComponent = ({ signal, setProof }) => {
-  console.log("asd");
-  const enableWorldID = async () => {
-    try {
-      const result = await worldID.enable();
-      setProof(result);
-      console.log("World ID verified successfully: ", result);
-    } catch (error) {
-      console.error(error);
-      enableWorldID().catch(console.error.bind(console));
-    }
-  };
-  React.useEffect(() => {
-    try {
-      if (!worldID.isInitialized()) {
-        worldID.init("world-id-container", {
-          action_id: "wid_staging_6e32d91ae5885eaecd779f3af4c900ea",
-          signal,
-        });
-      }
-      if (!worldID.isEnabled()) {
-        enableWorldID().catch(console.error.bind(console));
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  }, []);
-  return <div id="world-id-container" />;
-};
+// export const WorldIDComponent = ({ signal, setProof }) => {
+//   console.log("asd");
+//   const enableWorldID = async () => {
+//     try {
+//       const result = await worldID.enable();
+//       setProof(result);
+//       console.log("World ID verified successfully: ", result);
+//     } catch (error) {
+//       console.error(error);
+//       enableWorldID().catch(console.error.bind(console));
+//     }
+//   };
+//   React.useEffect(() => {
+//     try {
+//       if (!worldID.isInitialized()) {
+//         worldID.init("world-id-container", {
+//           action_id: "wid_staging_6e32d91ae5885eaecd779f3af4c900ea",
+//           signal,
+//         });
+//       }
+//       if (!worldID.isEnabled()) {
+//         enableWorldID().catch(console.error.bind(console));
+//       }
+//     } catch (error) {
+//       console.log(error);
+//     }
+//   }, []);
+//   return <div id="world-id-container" />;
+// };
