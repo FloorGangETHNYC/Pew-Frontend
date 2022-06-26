@@ -1,10 +1,19 @@
+import { ethers, providers } from "ethers";
 import { useCallback, useEffect, useReducer, useRef, useState } from "react";
 
 import React from "react";
 import { web3Modal } from "./WalletConnect";
 
+// import worldID from "@worldcoin/id";
+
+const truncatedAddress = (address) => {
+  return address.substring(0, 5) + "...";
+};
+
 export default function Navbar() {
-  const connect = async () => {
+  const [screen, setScreen] = React.useState("initial");
+  const [currentAddress, setAddress] = useState("");
+  const connectWallet = async () => {
     // This is the initial `provider` that is returned when
     // using web3Modal to connect. Can be MetaMask or WalletConnect.
     let provider;
@@ -18,11 +27,7 @@ export default function Navbar() {
 
       const signer = web3Provider.getSigner();
       const address = await signer.getAddress();
-
-      const network = await web3Provider.getNetwork();
-      // console.log("🚀 | connect | network", network);
-      const claimContract = await getContract("TokenVesting", network.chainId);
-      // console.log("🚀 | connect | claimContract", claimContract);
+      setAddress(address);
     } catch (error) {
       console.log("🚀 | connect | error", error);
       // Handle if user closes modal
@@ -37,16 +42,32 @@ export default function Navbar() {
     }
   }, []);
 
+  // if (typeof window !== "undefined") {
+  //   worldID.init("world-id-container", {
+  //     enable_telemetry: true,
+  //     action_id: "wid_staging_6e32d91ae5885eaecd779f3af4c900ea",
+
+  //     // <- Set an appropriate signal for each user
+  //   });
+  // }
+
   return (
     <nav>
       <img src="Pew Logo.png" alt="pew logo" />
       <h1>Pew</h1>
-      <button className="nav-link" href="" onClick={connect}>
-        Connect
-      </button>
-      <button className="nav-link" href="">
-        Worldcoin
-      </button>
+
+      {screen === "initial" && (
+        <button className="nav-link" href="" onClick={connectWallet}>
+          {currentAddress ? truncatedAddress(currentAddress) : "Connect"}
+        </button>
+      )}
+      {currentAddress && (
+        <button className="nav-link" href="" onClick={connectWallet}>
+          Connect with WorldId
+        </button>
+      )}
+
+      {/* {currentAddress && <div id="world-id-container"></div>} */}
     </nav>
   );
 }
