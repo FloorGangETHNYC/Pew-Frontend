@@ -22,9 +22,14 @@ nav {
 }
 
 nav > h1 {
-  font-size: 35px;
-  margin-right: auto;
+  font-size: 45px;
   text-align: center;
+}
+
+nav > img {
+  width: 65px;
+  margin-right: auto;
+  margin-left: 15px;
 }
 
 nav > a {
@@ -59,8 +64,10 @@ nav > hr {
 
 .header{
   margin: 0 auto;
-  padding: 100px;
+  margin-bottom: 50px;
+  padding: 150px;
   text-align: center;
+  background-image: url('../images/background.png');
 }
 
 header > h1 {
@@ -80,7 +87,14 @@ header > div > button{
   padding: 10px;
 }
 
-/* the grid of daos roughly on the right side of the page */
+header > form > input {
+  margin-top: 20px;
+  border-radius: 9px;
+  font-size: 20px;
+  padding: 10px;
+}
+
+/* the grid of daos */
 .container{
   display: grid;
   grid: 300px / auto auto auto;
@@ -92,7 +106,7 @@ header > div > button{
   height: 275px;
   background-color: black;
   border-radius: 9px;
-  margin: 15px 37px;
+  margin: 15px 0;
 }
 
 .dao--logos{
@@ -104,6 +118,7 @@ header > div > button{
 h3{
   color: white;
   margin-left: 19px;
+  margin-top: 15px;
   margin-bottom: 1px;
   text-align: left;
 }
@@ -132,4 +147,36 @@ h3{
   color: white;
   border-radius: 4px;
   margin-top: 5px;
+}
+
+footer{
+  background-color: black;
+  height: 100px;
+  margin: 5px;
+}
+
+footer > p {
+  color: rgba(157, 157, 157, 0.737);
+  padding: 40px 50px;
+}
+
+/* Creator Page */
+
+h1{
+  font-size: 100px;
+}
+
+.create--header{
+  margin-top: 50px;
+}
+
+.create{
+  display: flex;
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.create--qs{
+
 }
