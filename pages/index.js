@@ -2,7 +2,7 @@ import React from "react"
 // import Navbar from "./components/Navbar"
 import Header from "./components/Header"
 import Dao from "./components/Dao"
-import data from "./dataDao"
+import data from "../data/dataDao"
 import Footer from "./components/Footer"
 
 export default function App(){

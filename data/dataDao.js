@@ -70,7 +70,31 @@ const dataDao = [
         active: 0,
         rating: 3.6,
         reviews: 15
-    }
+    },
+    {
+        id: 10,
+        logo: "dreamdao.jpg",
+        name: "DreamDao",
+        active: 1,
+        rating: 4.1,
+        reviews: 30
+    },
+    {
+        id: 11,
+        logo: "kicksdao.jpg",
+        name: "KicksDao",
+        active: 0,
+        rating: 3.2,
+        reviews: 18
+    },
+    {
+        id: 12,
+        logo: "cryptozombies.jpg",
+        name: "CryptoZombies",
+        active: 1,
+        rating: 4.7,
+        reviews: 60
+    },
 ]
 
 export default dataDao;
