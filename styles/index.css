@@ -16,7 +16,7 @@ code {
 /* Top Navbar */
 
 nav {
-  padding: 15px 36px;
+  padding: 5px 36px;
   display: flex;
   align-items: center;
 }
@@ -24,12 +24,12 @@ nav {
 nav > h1 {
   font-size: 45px;
   text-align: center;
+  margin-right: auto;
 }
 
 nav > img {
-  width: 65px;
-  margin-right: auto;
-  margin-left: 15px;
+  width: 45px;
+  margin: 0 15px;
 }
 
 nav > a {
@@ -96,6 +96,7 @@ header > form > input {
 
 /* the grid of daos */
 .container{
+  padding-left: 55px;
   display: grid;
   grid: 300px / auto auto auto;
   margin: 0 auto;
@@ -158,25 +159,4 @@ footer{
 footer > p {
   color: rgba(157, 157, 157, 0.737);
   padding: 40px 50px;
-}
-
-/* Creator Page */
-
-h1{
-  font-size: 100px;
-}
-
-.create--header{
-  margin-top: 50px;
-}
-
-.create{
-  display: flex;
-  width: 600px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.create--qs{
-
 }

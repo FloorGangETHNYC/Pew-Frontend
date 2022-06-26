@@ -1,5 +1,5 @@
 import React from "react"
-// import Navbar from "./components/Navbar"
+import Navbar from "./components/Navbar"
 import Header from "./components/Header"
 import Dao from "./components/Dao"
 import data from "../data/dataDao"
@@ -17,7 +17,7 @@ export default function App(){
   
   return(
     <div>
-      {/* <Navbar /> */}
+      <Navbar />
       <Header />
       <section className="container">{daos}</section>
       <Footer />
