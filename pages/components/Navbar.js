@@ -1,6 +1,7 @@
 import { ethers, providers } from "ethers";
 import { useCallback, useEffect, useReducer, useRef, useState } from "react";
 
+import Image from "next/image";
 import React from "react";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 import Web3Modal from "web3modal";
@@ -75,7 +76,7 @@ export default function Navbar() {
 
   return (
     <nav>
-      <img src="Pew Logo.png" alt="pew logo" />
+      <Image src="/PewLogo.png" alt="pew logo" height="100%" width="100%" />
       <h1>Pew</h1>
 
       {screen === "initial" && (
