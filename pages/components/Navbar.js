@@ -1,8 +1,31 @@
 import { ethers, providers } from "ethers";
 import { useCallback, useEffect, useReducer, useRef, useState } from "react";
 
+import Image from "next/image";
 import React from "react";
-import { web3Modal } from "./WalletConnect";
+import WalletConnectProvider from "@walletconnect/web3-provider";
+import Web3Modal from "web3modal";
+
+const INFURA_ID = "460f40a260564ac4a4f4b3fffb032dad";
+
+const providerOptions = {
+  walletconnect: {
+    package: WalletConnectProvider, // required
+    options: {
+      infuraId: INFURA_ID, // required
+    },
+  },
+};
+
+const web3Modal = () => {
+  if (typeof window !== "undefined") {
+    return new Web3Modal({
+      network: "mainnet", // optional
+      cacheProvider: true,
+      providerOptions, // required
+    });
+  }
+};
 
 // import worldID from "@worldcoin/id";
 
@@ -53,7 +76,7 @@ export default function Navbar() {
 
   return (
     <nav>
-      <img src="Pew Logo.png" alt="pew logo" />
+      <Image src="/PewLogo.png" alt="pew logo" height="100%" width="100%" />
       <h1>Pew</h1>
 
       {screen === "initial" && (
@@ -62,7 +85,7 @@ export default function Navbar() {
         </button>
       )}
       {currentAddress && (
-        <button className="nav-link" href="" onClick={connectWallet}>
+        <button className="nav-link" href="">
           Connect with WorldId
         </button>
       )}
