@@ -62,7 +62,7 @@ export default function Navbar() {
         </button>
       )}
       {currentAddress && (
-        <button className="nav-link" href="" onClick={connectWallet}>
+        <button className="nav-link" href="" onClick={}>
           Connect with WorldId
         </button>
       )}
