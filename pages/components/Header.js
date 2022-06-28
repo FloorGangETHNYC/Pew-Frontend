@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 export default function Header() {
     return(
@@ -14,6 +14,6 @@ export default function Header() {
                 <button name="activity">Activity</button>
                 <button name="alpha">Alphabtical</button>
             </div> */}
-        </header>
-    )
+    </header>
+  );
 }
